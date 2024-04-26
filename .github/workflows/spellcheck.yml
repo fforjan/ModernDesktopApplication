@@ -1,5 +1,8 @@
 name: spellcheck
-on: workflow_dispatch
+on: 
+  push:
+    branches:
+      - 'main'
 jobs:
   check-spelling:
     runs-on: ubuntu-latest
