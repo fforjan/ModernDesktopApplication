@@ -8,3 +8,5 @@ This focus mainly on the .NET platforn, with either Avalonia or WPF as a UI plat
 
 [Continuous Deployment](ContinuousDeployment.MD)
 
+[A/B Testing](AB_Testing.MD)
+
