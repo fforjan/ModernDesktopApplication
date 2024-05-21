@@ -6,6 +6,12 @@ Multiple channel
 - preview
 - daily
 
-There is no push to users, user may stays on a specific version as long as they want? 
+Available solution:
+1. dotnet tool deployment
+no channel, just lastest available.
+no bandwith issue, hosted by nuget.org ?
+
+1. https://github.com/Squirrel/Squirrel.Windows/
 
 Note: in case of extensions based architecture, when using preview or daily build, internal component may be updated during a preview cycle, either by replace the full componenet or black listing some of the service.
+no  bandwith issue, hosted by nuget.org ?
