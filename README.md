@@ -11,5 +11,5 @@ It is also in the context of a application delivered to customer where the custo
 
 [A/B Testing](AB_Testing.MD)
 
-[Telemetry](Telemetry.MD)
+[Observability](Observability.MD)
 
