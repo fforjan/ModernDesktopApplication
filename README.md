@@ -13,3 +13,5 @@ It is also in the context of a application delivered to customer where the custo
 
 [Observability](Observability.MD)
 
+[Testing](Testing.MD)
+

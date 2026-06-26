@@ -7,11 +7,57 @@ Multiple channel
 - daily
 
 Available solution:
-1. dotnet tool deployment
-no channel, just lastest available.
-no bandwith issue, hosted by nuget.org ?
 
-1. https://github.com/Squirrel/Squirrel.Windows/
+### 1. dotnet tool deployment
+- No channel support, only latest available
+- Bandwidth: No issue, hosted by nuget.org
+- Use case: CLI tools and simple applications
 
-Note: in case of extensions based architecture, when using preview or daily build, internal component may be updated during a preview cycle, either by replace the full componenet or black listing some of the service.
-no  bandwith issue, hosted by nuget.org ?
+### 2. Squirrel.Windows
+**Link:** https://github.com/Squirrel/Squirrel.Windows/
+
+**Status:** Actively maintained, seeking community contributions for ongoing support.
+
+**Features:**
+- Delta updates (efficient bandwidth)
+- Multiple channels (stable, beta, nightly)
+- Auto-updates with user control
+- Works with NSIS or custom installers
+
+**Considerations:**
+- Requires hosting your own update server or use third-party service
+- Can integrate with NuGet feeds for hosting
+- Suitable for desktop applications needing frequent updates across multiple release channels
+
+### 3. Windows Package Manager (winget)
+**Repository:** https://github.com/microsoft/winget-pkgs
+
+**Overview:**
+Distribution channel through Windows Package Manager (native in Windows 11 and available for Windows 10).
+
+**How it works:**
+- Submit package manifest to microsoft/winget-pkgs repository
+- Manifest specifies package metadata, download URL, and SHA256 hash
+- Users discover and install via `winget install package-name`
+- Users can update via `winget upgrade`
+
+**Manifest includes:**
+- Package ID, version, publisher
+- Download URL and SHA256 hash
+- Installation settings (silent install flags)
+- License, homepage, documentation links
+
+**Advantages:**
+- Native Windows integration (built-in to Windows 11)
+- Discoverability through winget search
+- Automatic update notifications for users
+- Free distribution channel
+
+**Considerations:**
+- Submission reviewed by Microsoft (typically 1-2 weeks)
+- Each version requires separate manifest submission
+- Best for stable releases, not continuous deployment
+- Can be combined with Squirrel.Windows for delta updates between releases
+
+**Best practice:**
+Use Squirrel.Windows for frequent automatic updates (preview, daily channels), and publish stable release versions to winget for users who prefer manual updates or easy installation.
